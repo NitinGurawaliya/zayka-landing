@@ -13,7 +13,7 @@ import {
   HeartIcon
 } from '@heroicons/react/24/outline'
 import Header from "../../components/Header"
-import PricingCard from '../components/PricingCard'
+import PricingCard from '@/components/PricingCard'
 import { useRouter } from 'next/navigation'
 import { useRef } from 'react'
 import React from 'react'
@@ -183,31 +183,6 @@ export default function OnboardingPage() {
     <div className="flex min-h-screen flex-col bg-white text-black overflow-x-hidden w-full">
       <Header />
       
-      {/* Organic Background Elements */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        {/* Floating shapes */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-[#818cf8]/20 to-[#6366F1]/20 rounded-full blur-xl animate-pulse" />
-        <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-blue-200/30 to-indigo-200/30 rounded-full blur-xl animate-pulse delay-1000" />
-        <div className="absolute bottom-40 left-20 w-40 h-40 bg-gradient-to-br from-indigo-200/30 to-purple-200/30 rounded-full blur-xl animate-pulse delay-2000" />
-        <div className="absolute bottom-20 right-10 w-28 h-28 bg-gradient-to-br from-[#818cf8]/20 to-[#6366F1]/20 rounded-full blur-xl animate-pulse delay-1500" />
-        
-        {/* Hand-drawn style lines */}
-        <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path d="M0,20 Q25,15 50,20 T100,20" stroke="url(#gradient1)" strokeWidth="0.5" fill="none" opacity="0.3" />
-          <path d="M0,80 Q25,85 50,80 T100,80" stroke="url(#gradient2)" strokeWidth="0.5" fill="none" opacity="0.3" />
-          <defs>
-            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#818cf8" stopOpacity="0.5" />
-              <stop offset="100%" stopColor="#6366F1" stopOpacity="0.5" />
-            </linearGradient>
-            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#6366F1" stopOpacity="0.5" />
-              <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.5" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-      
       {/* Hero Section */}
       <div className="relative isolate pt-8 overflow-hidden">
         <div className="relative py-16 sm:py-20">
@@ -246,8 +221,8 @@ export default function OnboardingPage() {
         </div>
       </div>
 
-      {/* Handcrafted Progress Indicator */}
-      <div className="w-full max-w-none px-0 py-8">
+      {/* Handcrafted Progress Indicator - restored to original position below hero section */}
+      <div className="w-full max-w-none px-0 py-8 sticky top-0 z-30 bg-white bg-opacity-90 backdrop-blur-md">
         <div className="relative w-full">
           {/* Organic progress line */}
           <div className="absolute md:top-6 top-8 left-0 right-0 h-1 bg-gradient-to-r from-[#818cf8]/20 to-[#6366F1]/20 rounded-full md:block hidden w-full">
@@ -296,7 +271,32 @@ export default function OnboardingPage() {
           </div>
         </div>
       </div>
-
+      
+      {/* Organic Background Elements */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        {/* Floating shapes */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-[#818cf8]/20 to-[#6366F1]/20 rounded-full blur-xl animate-pulse" />
+        <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-blue-200/30 to-indigo-200/30 rounded-full blur-xl animate-pulse delay-1000" />
+        <div className="absolute bottom-40 left-20 w-40 h-40 bg-gradient-to-br from-indigo-200/30 to-purple-200/30 rounded-full blur-xl animate-pulse delay-2000" />
+        <div className="absolute bottom-20 right-10 w-28 h-28 bg-gradient-to-br from-[#818cf8]/20 to-[#6366F1]/20 rounded-full blur-xl animate-pulse delay-1500" />
+        
+        {/* Hand-drawn style lines */}
+        <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M0,20 Q25,15 50,20 T100,20" stroke="url(#gradient1)" strokeWidth="0.5" fill="none" opacity="0.3" />
+          <path d="M0,80 Q25,85 50,80 T100,80" stroke="url(#gradient2)" strokeWidth="0.5" fill="none" opacity="0.3" />
+          <defs>
+            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#818cf8" stopOpacity="0.5" />
+              <stop offset="100%" stopColor="#6366F1" stopOpacity="0.5" />
+            </linearGradient>
+            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#6366F1" stopOpacity="0.5" />
+              <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.5" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      
       {/* Form Container */}
       <div className="mx-auto max-w-4xl px-6 lg:px-8 pb-16">
         <motion.div 
