@@ -32,10 +32,53 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-white text-black overflow-x-hidden w-full">
       <Header />
+    
+
       <HeroSection />
       <BusinessTypeSelector />
       <PricingSection />
+
+      
+
+
       <ReasonsToLoveSection />
+      
+      {/* Guest Registration for Marketing Section */}
+      <Section background="gray" padding="xl">
+        <Container>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            {/* Left: Mobile Image Placeholder */}
+            <div className="flex justify-center">
+              <div className="w-64 h-128 max-w-xs rounded-3xl shadow-lg flex items-center justify-center  overflow-hidden">
+                <img
+                  src="https://res.cloudinary.com/dixjcb4on/image/upload/v1752428985/dishes_image/guest_reg_ss.jpg"
+                  alt="Mobile Guest Registration"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </div>
+            {/* Right: Responsive Text */}
+            <div className="flex flex-col items-start">
+              <Heading level="h2" size="3xl" className="mb-4 text-gray-900 font-extrabold sm:text-2xl sm:mb-2">
+                Guest Registration for Smart Marketing
+              </Heading>
+              <Text size="xl" className="mb-4 text-gray-700 sm:text-base sm:mb-2">
+                Collect your guests' names and phone numbers easily when they scan your QR menu. Build a valuable customer list for future marketing campaigns and personalized offers.
+              </Text>
+              <Text size="lg" className="mb-6 text-gray-600 sm:text-sm sm:mb-3">
+                Use this data to remind your guests about special events, new menu launches, or simply to let them know you exist—bringing them back to your restaurant again and again!
+              </Text>
+              <div className="flex items-center bg-green-100 text-green-800 px-4 py-2 rounded-lg font-medium sm:text-xs sm:px-2 sm:py-1">
+                <svg className="w-5 h-5 mr-2 text-green-500 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                </svg>
+                Build your own customer database—no extra cost!
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
       
       {/* Call to Action Section */}
       <Section background="gradient" padding="lg">

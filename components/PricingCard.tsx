@@ -1,10 +1,16 @@
 import React from 'react';
+import { CheckIcon, XMarkIcon } from '@heroicons/react/24/outline';
+
+export interface PricingFeature {
+  name: string;
+  included: boolean;
+}
 
 export interface PricingCardProps {
   name: string;
   price: string;
   description: string;
-  features: string[];
+  features: PricingFeature[];
   featured?: boolean;
   selected?: boolean;
   onClick?: () => void;
@@ -41,10 +47,14 @@ export const PricingCard: React.FC<PricingCardProps> = ({
     </div>
     <p className="text-center text-gray-600 mb-6 min-h-[48px]">{description}</p>
     <ul className="mb-8 space-y-3 text-base text-gray-700 flex-1">
-      {features.map((feature, i) => (
-        <li key={feature} className="flex items-center gap-3">
-          <span className="inline-block w-2 h-2 rounded-full bg-[#6366F1] align-middle" style={{ verticalAlign: 'middle' }} />
-          <span className="align-middle" style={{ verticalAlign: 'middle' }}>{feature}</span>
+      {features.map((feature) => (
+        <li key={feature.name} className="flex items-center gap-3">
+          {feature.included ? (
+            <CheckIcon className="w-5 h-5 text-green-500 flex-shrink-0" />
+          ) : (
+            <XMarkIcon className="w-5 h-5 text-red-500 flex-shrink-0" />
+          )}
+          <span className={`align-middle ${!feature.included ? 'text-gray-400 line-through' : ''}`}>{feature.name}</span>
         </li>
       ))}
     </ul>

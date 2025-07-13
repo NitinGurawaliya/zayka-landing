@@ -6,21 +6,21 @@ const menuTiers = [
     icon: StarIcon,
     title: 'Tier 1\nMenu',
     description: 'Basic digital menu with essential features',
-    href: '/sample-menu/tier-1',
+    href: 'https://dine-inn.vercel.app/menu/home/4',
     features: ['Up to 50 items', 'Basic categories', 'Simple design']
   },
   {
     icon: TrophyIcon,
     title: 'Tier 2\nMenu',
     description: 'Professional menu with advanced features',
-    href: '/sample-menu/tier-2',
+    href: 'https://www.dineinn.shop/restaurant/menu/home/1',
     features: ['Unlimited items', 'Advanced categories', 'Custom branding']
   },
   {
     icon: SparklesIcon,
     title: 'Tier 3\nMenu',
     description: 'Premium menu with all features',
-    href: '/sample-menu/tier-3',
+    href: '/onboarding',
     features: ['Multi-language', 'Analytics', 'Premium design']
   }
 ]
@@ -44,6 +44,8 @@ export default function BusinessTypeSelector() {
             <Link
               key={index}
               href={tier.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex flex-col items-center p-8 bg-white/50 backdrop-blur-sm rounded-2xl border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
               <div className="w-20 h-20 mb-6 flex items-center justify-center bg-gradient-to-br from-[#818cf8] to-[#6366F1] rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300">

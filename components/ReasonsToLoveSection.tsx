@@ -58,13 +58,13 @@ export default function ReasonsToLoveSection() {
             Why Choose Us
           </motion.h2>
           <motion.p
-            className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+            className="mt-2 text-3xl font-bold tracking-tight text-red-600 sm:text-4xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            Everything you need to manage your digital menu
+            Reasons to Love Zayka
           </motion.p>
           <motion.p
             className="mt-6 text-lg leading-8 text-gray-600"

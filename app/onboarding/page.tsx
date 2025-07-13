@@ -18,13 +18,32 @@ import { useRouter } from 'next/navigation'
 import { useRef } from 'react'
 import React from 'react'
 
+const allFeatures = [
+  'Customizable QR Code',
+  'Unlimited Menu Items',
+  'Basic Analytics',
+  'Priority Support',
+  'Custom Branding',
+  'Real-time Analytics',
+  'Multiple Locations',
+  'API Access',
+  'Dedicated Support',
+];
+
 const plans = [
   {
     id: 'starter',
     name: 'Starter',
     price: '₹499',
     description: 'Perfect for small restaurants',
-    features: ['Basic QR code menu', 'Up to 50 menu items', 'Basic analytics', 'Email support'],
+    features: allFeatures.map(f => ({
+      name: f,
+      included: [
+        'Customizable QR Code',
+        'Unlimited Menu Items',
+        'Basic Analytics',
+      ].includes(f)
+    })),
     color: 'from-blue-400 to-indigo-500'
   },
   {
@@ -32,7 +51,17 @@ const plans = [
     name: 'Professional',
     price: '₹999',
     description: 'Ideal for established restaurants',
-    features: ['Advanced QR code menu', 'Unlimited menu items', 'Real-time analytics', 'Priority support', 'Custom branding'],
+    features: allFeatures.map(f => ({
+      name: f,
+      included: [
+        'Customizable QR Code',
+        'Unlimited Menu Items',
+        'Basic Analytics',
+        'Priority Support',
+        'Custom Branding',
+        'Real-time Analytics',
+      ].includes(f)
+    })),
     popular: true,
     color: 'from-[#818cf8] to-[#6366F1]'
   },
@@ -41,10 +70,13 @@ const plans = [
     name: 'Enterprise',
     price: 'Get Quote',
     description: 'For restaurant chains',
-    features: ['Multiple locations', 'API access', 'Advanced analytics', 'Dedicated support', 'Custom features'],
+    features: allFeatures.map(f => ({
+      name: f,
+      included: true
+    })),
     color: 'from-indigo-400 to-purple-500'
   }
-]
+];
 
 const timeSlots = [
   '9:00 AM - 11:00 AM',
@@ -298,7 +330,7 @@ export default function OnboardingPage() {
       </div>
       
       {/* Form Container */}
-      <div className="mx-auto max-w-4xl px-6 lg:px-8 pb-16">
+      <div className="mx-auto max-w-7xl px-2 lg:px-4 pb-16">
         <motion.div 
           className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-[#818cf8]/20 shadow-2xl"
           initial={{ y: 20, opacity: 0 }}
@@ -420,7 +452,7 @@ export default function OnboardingPage() {
                   <h2 className="text-3xl font-bold text-gray-900">Choose your perfect plan</h2>
                   <p className="text-gray-600 mt-3">Each plan is crafted with love for different restaurant needs</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                   {plans.map((plan) => (
                     <PricingCard
                       key={plan.id}

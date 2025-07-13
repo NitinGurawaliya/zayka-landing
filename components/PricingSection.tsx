@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useInView } from 'framer-motion'
-import { CheckIcon, SparklesIcon } from '@heroicons/react/24/outline'
+import { CheckIcon, SparklesIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useRef } from 'react'
 import { Container, Section, Heading, Text, Grid, Card, Badge, Button } from '@/components/ui'
 import { pricingTiers } from '@/constants'
@@ -54,43 +54,37 @@ export default function PricingSection() {
       
       <Container>
         <div 
-          className="mx-auto max-w-2xl sm:text-center"
+          className="mx-auto max-w-2xl text-center"
         >
-          <Badge variant="primary" className="mb-4">
-            Choose your perfect plan
+          <Badge variant="primary" className="mb-4 mx-auto">
+            Pricing
           </Badge>
           <Heading level="h2" size="4xl" align="center" className="mb-6">
             Choose your perfect plan
           </Heading>
-          <Text size="lg" align="center">
-            Each plan is crafted with love for different restaurant needs
-          </Text>
-        </div>
-
-        {/* Badge Row for md+ screens */}
-        <div className="hidden md:grid grid-cols-3 gap-6 mt-16 mb-2">
-          <div />
-          <div className="flex justify-center items-end relative h-8">
-            <Badge 
-              variant="primary" 
-              size="sm"
-              className="absolute -top-4 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap"
-            >
-              <SparklesIcon className="w-4 h-4 mr-1" />
-              Most Loved
-            </Badge>
-          </div>
-          <div />
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 gap-8 mx-auto mt-8 max-w-4xl sm:mt-12 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 lg:gap-8 mx-auto pt-16 max-w-6xl sm:mt-12 md:grid-cols-3">
           {pricingTiers.map((tier, index) => (
-            <div key={tier.id}>
+            <div key={tier.id} className={tier.featured ? 'relative' : ''}>
+              {/* Floating Most Loved badge above featured card on large screens */}
+              {tier.featured && (
+                <div className="hidden md:block absolute left-1/2 -top-10 -translate-x-1/2 z-20">
+                  <Badge 
+                    variant="primary" 
+                    size="sm"
+                    className="whitespace-nowrap px-4 py-2 shadow-lg text-base"
+                  >
+                    <SparklesIcon className="w-5 h-5 mr-2" />
+                    Most Loved
+                  </Badge>
+                </div>
+              )}
               <Card 
                 variant={tier.featured ? "elevated" : "default"}
                 className={`relative flex flex-col h-full transition-all duration-300
-                  ${tier.featured ? 'border-[#6366F1] scale-105 z-10' : 'border-[#818cf8]/20 hover:border-[#6366F1]/40'}
+                  ${tier.featured ? 'border-[#6366F1] scale-105 z-10 shadow-xl' : 'border-[#818cf8]/20 hover:border-[#6366F1]/40 hover:shadow-lg'}
                 `}
                 style={{ minHeight: 520 }}
               >
@@ -125,11 +119,20 @@ export default function PricingSection() {
                   {tier.description}
                 </Text>
                 
-                <ul className="mb-8 space-y-3 text-base text-gray-700 flex-1">
+                <ul className="mb-8 space-y-2 text-sm font-sans flex-1" style={{ fontFamily: 'Poppins, Inter, Montserrat, sans-serif' }}>
                   {tier.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-3">
-                      <span className="inline-block w-2 h-2 rounded-full bg-[#6366F1] align-middle" />
-                      <span className="align-middle">{feature}</span>
+                    <li key={feature.name} className="flex items-center gap-2">
+                      {feature.included ? (
+                        <>
+                          <CheckIcon className="w-4 h-4 text-green-500 flex-shrink-0" />
+                          <span className="align-middle font-semibold text-[#181A2A]">{feature.name}</span>
+                        </>
+                      ) : (
+                        <>
+                          <span className="w-4 h-4 inline-block flex-shrink-0" />
+                          <span className="align-middle font-normal text-[#181A2A]">{feature.name}</span>
+                        </>
+                      )}
                     </li>
                   ))}
                 </ul>

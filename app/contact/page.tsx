@@ -43,7 +43,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900">Email</h3>
                   <p className="text-gray-600">hopesalive.1947@gmail.com</p>
-                  <p className="text-sm text-gray-500">We'll respond within 24 hours</p>
+                  <p className="text-sm text-gray-500">We'll respond within 2 hours</p>
                 </div>
               </div>
 
@@ -98,7 +98,7 @@ export default function ContactPage() {
                     id="first-name"
                     autoComplete="given-name"
                     className="block w-full rounded-xl border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#818cf8] sm:text-sm sm:leading-6 transition-all duration-200"
-                    placeholder="John"
+                    placeholder="Nitin"
                   />
                 </div>
                 <div>
@@ -111,7 +111,7 @@ export default function ContactPage() {
                     id="last-name"
                     autoComplete="family-name"
                     className="block w-full rounded-xl border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#818cf8] sm:text-sm sm:leading-6 transition-all duration-200"
-                    placeholder="Doe"
+                    placeholder="Kumar"
                   />
                 </div>
               </div>
@@ -126,7 +126,7 @@ export default function ContactPage() {
                   id="email"
                   autoComplete="email"
                   className="block w-full rounded-xl border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#818cf8] sm:text-sm sm:leading-6 transition-all duration-200"
-                  placeholder="john@restaurant.com"
+                  placeholder="your_restaurant_email@gmail.com"
                 />
               </div>
               
@@ -140,7 +140,7 @@ export default function ContactPage() {
                   id="phone-number"
                   autoComplete="tel"
                   className="block w-full rounded-xl border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#818cf8] sm:text-sm sm:leading-6 transition-all duration-200"
-                  placeholder="+1 (555) 123-4567"
+                  placeholder="9466444175"
                 />
               </div>
               

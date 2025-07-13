@@ -5,6 +5,11 @@ export interface NavigationItem {
 }
 
 // Pricing types
+export interface PricingFeature {
+  name: string
+  included: boolean
+}
+
 export interface PricingTier {
   name: string
   id: string
@@ -13,7 +18,7 @@ export interface PricingTier {
     monthly: string
   }
   description: string
-  features: string[]
+  features: PricingFeature[]
   featured: boolean
 }
 

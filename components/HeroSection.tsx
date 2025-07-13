@@ -112,25 +112,15 @@ export default function HeroSection() {
               variants={itemVariants}
               className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-y-4 sm:gap-y-0 sm:gap-x-6"
             >
+             
               <Link
-                href="/contact"
-                className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-x-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-all duration-200 hover-lift"
-              >
-                <QrCodeIcon className="h-5 w-5 transition-transform group-hover:scale-110" />
-                Get started
-                <span className="absolute -right-1 -top-1 flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-light opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-primary-light"></span>
-                </span>
-              </Link>
-              <Link
-                href="/contact"
+                href="/onboarding"
                 className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-x-2 rounded-lg bg-[#FF6B35] px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#E85A2C] transition-all duration-200 hover-lift"
               >
                 Get a Call Back
               </Link>
               <Link 
-                href="/#features" 
+                href="/#pricing" 
                 className="text-sm font-semibold leading-6 text-gray-900 hover:text-primary transition-all duration-200 group interactive-bounce"
               >
                 Learn more{' '}
