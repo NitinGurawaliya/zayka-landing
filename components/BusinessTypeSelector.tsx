@@ -13,7 +13,7 @@ const menuTiers = [
     icon: TrophyIcon,
     title: 'Tier 2\nMenu',
     description: 'Professional menu with advanced features',
-    href: 'https://www.dineinn.shop/restaurant/menu/home/1',
+    href: 'https://hillpoint.dineinn.shop',
     features: ['Unlimited items', 'Advanced categories', 'Custom branding']
   },
   {
