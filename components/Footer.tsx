@@ -21,10 +21,8 @@ const companyLinks = [
 ]
 
 const socialLinks = [
-  { name: 'Instagram', href: 'https://instagram.com/zaykaqr', icon: Instagram },
-  { name: 'Facebook', href: 'https://facebook.com/zaykaqr', icon: Facebook },
-  { name: 'Twitter', href: 'https://twitter.com/zaykaqr', icon: Twitter },
-  { name: 'LinkedIn', href: 'https://linkedin.com/company/zaykaqr', icon: Linkedin },
+  { name: 'Instagram', href: 'https://www.instagram.com/zayka.app', icon: Instagram },
+  { name: 'Twitter', href: 'https://x.com/zaykaQr?t=LO6v7px1ghYZkq6_87W0ig&s=09', icon: Twitter },
 ]
 
 export default function Footer() {

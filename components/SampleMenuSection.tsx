@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { QrCodeIcon } from '@heroicons/react/24/outline'
 
-const sampleMenuItems = [
+const sampleMenuItems = [ 
   {
     name: 'Margherita Pizza',
     description: 'Fresh tomatoes, mozzarella, basil, and olive oil',

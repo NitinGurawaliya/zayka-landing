@@ -11,10 +11,10 @@ import {
 
 
 export const navigation: NavigationItem[] = [
-  { name: 'Home', href: '#' },
-  { name: 'Pricing', href: '#pricing' },
-  { name: 'Menu', href: '#menu' },
-  { name: 'Features', href: '#features' },
+  { name: 'Home', href: '/' },
+  { name: 'Pricing', href: '/#pricing' },
+  { name: 'Menu', href: '/#menu' },
+  { name: 'Features', href: '/#features' },
   { name: 'Contact', href: '/contact' },
 ]
 
